@@ -1,0 +1,26 @@
+head{
+	font-family: Arial;
+}
+
+.centered {
+    text-align: center;
+}
+
+body {
+    font-family: Arial; 
+}
+
+.container {
+}
+
+.left_column {
+  width: 60%;
+  float: left;
+  min-height: 400px;
+}
+
+.right_column {
+  width: 40%;
+  float: right;
+  min-height: 400px;
+}
