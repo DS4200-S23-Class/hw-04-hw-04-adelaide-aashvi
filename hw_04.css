@@ -32,10 +32,18 @@ body {
 
 line{
     stroke: hotpink;
-    stroke-width:1px;
+    stroke-width: 2px;
 }
 
 circle {
-    fill: darkcyan;
+    fill: black;
 }
 
+circle:hover {
+    fill: lightpink;
+}
+
+.grid {
+  stroke: hotpink;
+  stroke-width: 0.5px;
+}
