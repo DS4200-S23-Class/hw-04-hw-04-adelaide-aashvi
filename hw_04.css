@@ -24,3 +24,18 @@ body {
   float: right;
   min-height: 400px;
 }
+
+#frame {
+    width: 550px;
+    height: 700px;
+}
+
+line{
+    stroke: hotpink;
+    stroke-width:1px;
+}
+
+circle {
+    fill: darkcyan;
+}
+
