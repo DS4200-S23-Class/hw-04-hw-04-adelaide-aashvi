@@ -14,7 +14,7 @@ function addBorder(id) {
         else {
             document.getElementById(id).style.stroke ="cyan";
             document.getElementById(id).setAttribute("stroke-width", "3px");
-            document.getElementById("print_num").innerHTML = "Selected Point Coordinates: " + "(" + xp + "," + xy +")";    
+            document.getElementById("print_num").innerHTML = "Most Recent Selected Point Coordinates: " + "(" + xp + "," + xy +")";    
         }
 }
 

@@ -2,6 +2,8 @@
 <html> 
 
 <head>
+
+     <!-- links the css style sheet-->
     <link rel="stylesheet" href="hw_04.css">
     
     <!-- add title -->
@@ -10,19 +12,24 @@
 
 <body>
 <div class = "centered">
+
+    <!-- add the heading -->
     <h1>hw-04: Event Handling</h1>
 </div>
 
 <div class="container">
 
+    <!-- create the left column, takes up 60% of page -->
   <div class="left_column">
     <h2> Scatterplot </h2>
 
     <div> 
         <svg id="frame">
+            <!-- creates the x and y axis -->
         <line x1="0" y1="400" x2="500" y2="400"/>
         <line x1="1" y1="400" x2="1" y2="0"/>
         
+            <!-- creates the x axis grid lines going up 1 -->
         <line class="grid" x1="50" y1="400" x2="50" y2="0"/>
         <line class="grid" x1="100" y1="400" x2="100" y2="0"/>
         <line class="grid" x1="150" y1="400" x2="150" y2="0"/>
@@ -34,6 +41,7 @@
         <line class="grid" x1="450" y1="400" x2="450" y2="0"/>
         <line class="grid" x1="500" y1="400" x2="500" y2="0"/>
 
+            <!-- creates the y axis grid lines going up 1-->
         <line class="grid" x1="0" y1="0" x2="500" y2="0"/>
         <line class="grid" x1="0" y1="40" x2="500" y2="40"/>
         <line class="grid" x1="0" y1="80" x2="500" y2="80"/>
@@ -45,6 +53,7 @@
         <line class="grid" x1="0" y1="320" x2="500" y2="320"/>
         <line class="grid" x1="0" y1="360" x2="500" y2="360"/>
 
+            <!-- plots the given points at (1,2), (2,4), (6,2), and (9,9) -->
         <circle id="point1" class="circle" cx="50" cy="320" r="5" onclick="addBorder('point1')" />
         <circle id="point2" class="circle" cx="100" cy="240" r="5" onclick="addBorder('point2')" />
         <circle id="point3" class="circle" cx="300" cy="320" r="5" onclick="addBorder('point3')" />
@@ -54,11 +63,12 @@
 
   </div>
 
-
+    <!-- create the right column, takes up 40% of page -->
   <div class="right_column">
     <h2> Coordinates </h2>
 
     <div class="dropdown" id = "coordinates">
+                <!-- creates the first dropdown menu for the possible x-coordinate points -->
               <p>Please choose X-coordinate!</p>
               <select name = "xCoordinate" id = "xCoordinate" value = "none">
                 <option value="1">1</option>
@@ -70,9 +80,9 @@
                 <option value="7">7</option>
                 <option value="8">8</option>
                 <option value="9">9</option>
-                <option value="10">10</option>
             </select>
 
+                <!-- creates the second dropdown menu for the possible y-coordinate points -->
             <p>Please choose Y-coordinate!</p>
             <select name = "yCoordinate" id = "yCoordinate" value = "none">
                 <option value="1">1</option>
@@ -84,22 +94,36 @@
                 <option value="7">7</option>
                 <option value="8">8</option>
                 <option value="9">9</option>
-                <option value="10">10</option>
             </select>
 
     </div>
-        <div class="button"> <button type="button" onclick="addPoint()">Add Point</button> </div>
-    
-    </div>
         
+            <!-- creates the button to plot the new coordinate-->
+        <div class="button"> <button type="button" onclick="addPoint()">Add a Point</button> </div>
+    
+  </div>
+            
+             <!-- prints the most recently selected coordinate-->
         <p id = "print_num"> </p>
   
-  </div>
-
 </div>
+
+     <!-- Acknowledgements -->
+<div id = "Acknowledgements">
+    <h2> Acknowledgements</h2>
+    <ul> 
+    <li>https://dev.to/gavinsykes/appending-a-child-to-an-svg-using-pure-javascript-1h9g</li>
+    <li>https://www.w3schools.com/howto/howto_css_dropdown.asp</li>
+    <li>https://stackoverflow.com/questions/35057909/difference-between-setattribute-and-setattributensnull#:~:text=setAttribute()%20is%20a%20DOM,attribute%20in%20the%20first%20argument.</li>
+    <li>http://rvlasveld.github.io/blog/2013/07/02/creating-interactive-graphs-with-svg-part-1/</li>
+    <li>https://codepen.io/catheraaine/pen/QNgoEX</li>
+    </ul> 
+</div>
+
 
 <!-- link js file -->
 <script src="hw_04.js"> </script>
+
 </body>
 
 </html>
