@@ -1,5 +1,5 @@
 // give border when clicked
-    function addBorder(id, x1, x2) {
+    function addBorder(id) {
 
         let ele = document.getElementById(id);
         let xcoord = ele.getAttribute("cx");
@@ -18,31 +18,36 @@
         }
     }
 
-    
-function addPoint() {
 
-    let Xcoordinate = document.getElementById("Xcoordinate").value;
-    let Ycoordinate = document.getElementById("Ycoordinate").value;
+
+window.onload=function addPoint() {
+
+
+
+    let xCoordinate = document.getElementById("Xcoordinate").value;
+    let yCoordinate = document.getElementById("Ycoordinate").value;
     let circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
 
 
-    circle.setAttributeNS(null, 'cx', Xcoordinate * 50);
-    circle.setAttributeNS(null, 'cy', 400 - Ycoordinate * 40);
-    circle.setAttributeNS(null, 'r', 5);
-    circle.setAttributeNS(null, 'name', "(" + Xcoordinate + "," + Ycoordinate + ")");
-    circle.classList.add('circle');
+    circle.setAttribute(null, 'cx', xCoordinate * 50);
+    circle.setAttribute(null, 'cy', 400 - (yCoordinate * 40));
+    circle.setAttribute( null,'r', 5);
+    circle.setAttribute(null,"class", "circle")
+
+    let id = "(" + xCoordinate.substring(0,1) + "," + (10 - yCoordinate.substring(0,1)) + ")"; 
+    circle.setAttribute("id", id)
 
     document.getElementById('frame').appendChild(circle);
-
-circle.addEventListener('mouseover', mouseOver);
-circle.addEventListener('mouseout', mouseOut);
-circle.addEventListener('click', onClick);
+    circle.addEventListener("click", () => addBorder(circle.id));
 }
 
+ document.getElementById("button").addEventListener("click", addPoint());
+
+
+
 let points = document.getElementsByClassName("circle");
+for (let i = 1; i <= points.length; i++) {
+     document.getElementsByClassName("circle")[i].addEventListener("click", () => addBorder(points[i].id)) 
+    };
 
 
-document.getElementById("button").addEventListener('click', addPoint);
-document.getElementById("newPoint").addEventListener('mouseover', mouseOver);
-document.getElementById("newPoint").addEventListener('mouseout', mouseOut);
-document.getElementById("newPoint").addEventListener('click', onClick);
