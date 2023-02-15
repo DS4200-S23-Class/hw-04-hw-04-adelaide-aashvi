@@ -1,5 +1,5 @@
 // give border when clicked
-    function addBorder(id) {
+function addBorder(id) {
 
         let ele = document.getElementById(id);
         let xcoord = ele.getAttribute("cx");
@@ -16,23 +16,20 @@
             document.getElementById(id).setAttribute("stroke-width", "3px");
             document.getElementById("print_num").innerHTML = "Selected Point Coordinates: " + "(" + xp + "," + xy +")";    
         }
-    }
+}
 
+  
+function addPoint() {
 
-
-window.onload=function addPoint() {
-
-
-
-    let xCoordinate = document.getElementById("Xcoordinate").value;
-    let yCoordinate = document.getElementById("Ycoordinate").value;
+    let xCoordinate = document.getElementById("xCoordinate").value;
+    let yCoordinate = document.getElementById("yCoordinate").value;
     let circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
 
 
-    circle.setAttribute(null, 'cx', xCoordinate * 50);
-    circle.setAttribute(null, 'cy', 400 - (yCoordinate * 40));
-    circle.setAttribute( null,'r', 5);
-    circle.setAttribute(null,"class", "circle")
+    circle.setAttribute('cx', xCoordinate * 50);
+    circle.setAttribute('cy', 400 - (yCoordinate * 40));
+    circle.setAttribute('r', 5);
+    circle.setAttribute("class", "circle")
 
     let id = "(" + xCoordinate.substring(0,1) + "," + (10 - yCoordinate.substring(0,1)) + ")"; 
     circle.setAttribute("id", id)
@@ -41,7 +38,7 @@ window.onload=function addPoint() {
     circle.addEventListener("click", () => addBorder(circle.id));
 }
 
- document.getElementById("button").addEventListener("click", addPoint());
+ document.getElementById("addPoint").addEventListener("click", addPoint);
 
 
 
