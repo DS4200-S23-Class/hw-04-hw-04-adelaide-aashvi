@@ -8,6 +8,11 @@ head{
 
 body {
     font-family: Arial; 
+    background-color: lavenderblush;
+}
+
+h2 {
+  color: hotpink;
 }
 
 .container {
